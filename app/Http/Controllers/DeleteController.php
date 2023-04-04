@@ -20,7 +20,7 @@ class DeleteController extends Controller
 
         dump($lesson_delete);
 
-        return redirect()->route('show_admin_home');
+        return redirect()->route('show_admin_home')->with('flash_message', 'レッスンの削除が完了しました');
         // return redirect()->route('school.admin_home');
 
     }

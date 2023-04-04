@@ -16,6 +16,11 @@
                     @include('school.calendar')
                 </div>
                 <div>
+                    @if (session('flash_message'))
+                        <div class="flash_message">
+                            {{ session('flash_message') }}
+                        </div>
+                    @endif
                     {{-- 本日の受講予約者一覧挿入 --}}
                     <div class="reserve-list">
                         <h3>本日の予約者一覧</h3>

@@ -18,6 +18,11 @@
             <div class="signin-box">
                 <div class="delete-box">
                     <h2 class="lesson-add"><strong>レッスン追加</strong></h2>
+                    @if (session('flash_message'))
+                        <div class="flash_message">
+                            {{ session('flash_message') }}
+                        </div>
+                    @endif
                     <form action="{{route('add_lesson')}}" method="post">
                         @csrf
                         <dl>

@@ -48,7 +48,7 @@ class AdminController extends Controller
             "email" => $request->email,
             "password" => Hash::make($request->password),
         ]);
-        return redirect("signin");
+        return redirect("signin")->with('flash_message', '新規会員登録が完了しました');
     }
 
 
@@ -65,23 +65,12 @@ class AdminController extends Controller
         $user = \App\Models\Post::where('email', $request->email)->first();
         // print_r($user);
 
-        // 各ユーザーの受講予約者一覧表示用
-        $user_reserve = Reserve::where('user_name',$user->name)->orderBy('reserve_date','asc')->orderBy('reserve_time','asc')->get();
-
-        // 日付取得
-        $cb = new Carbon();
-
-        // 昨日
-        $yesterday = $cb::yesterday();
-
-        // ユーザー名前表示用
-        $date = ['id'=> $user->id,'name' =>$user->name];
-        // print_r($date);
-
         //登録されているパスワードの取得
-        $currentPass = $user->password;
-        $role = $user->role;
-        // print_r($role);
+            if (!empty($user->password)) {
+                $currentPass = $user->password;
+                $role = $user->role;
+                // print_r($role);
+            }
 
         //入力値とDB上のパスの一致確認
         if(Hash::check($pass,$currentPass)){
@@ -92,6 +81,19 @@ class AdminController extends Controller
             $request->session()->put('age',$user->age);
             $request->session()->put('tel',$user->tel);
             $request->session()->put('email',$user->email);
+
+            // 各ユーザーの受講予約者一覧表示用
+                $user_reserve = Reserve::where('user_name', $user->name)->orderBy('reserve_date', 'asc')->orderBy('reserve_time', 'asc')->get();
+
+                // 日付取得
+                $cb = new Carbon();
+
+                // 昨日
+                $yesterday = $cb::yesterday();
+
+                // ユーザー名前表示用
+                $date = ['id'=> $user->id,'name' =>$user->name];
+                // print_r($date);
 
             if($role === 1){
                 //受講予約一覧表示用
@@ -104,11 +106,10 @@ class AdminController extends Controller
 
             return view('school.mypage', compact('request','date','lessons','user_reserve','yesterday'));
 
-        }else{
+        }
         return back()->withErrors([
             'login_error' => 'メールドレスかパスワードが間違っています。'
         ]);
-        }
     }
 
     //ログアウト
@@ -143,7 +144,7 @@ class AdminController extends Controller
         ]);
         //画面遷移しないエラー（404|not found）
         // return view('school.signin');
-        return redirect()->route('show_signin');
+        return redirect()->route('show_signin')->with('flash_message', 'パスワードの変更が完了しました');
     }
 
     // アカウント物理削除処理
@@ -151,7 +152,7 @@ class AdminController extends Controller
         $user = Post::where('id', $request->id);
         $user -> delete();
 
-        return redirect()->route("index");
+        return redirect()->route("index")->with('flash_message', 'アカウントの削除が完了しました');
 
     }
 

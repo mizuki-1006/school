@@ -41,7 +41,7 @@ class ReserveController extends Controller
             "reserve_date" => $request['reserve_date'],
             "reserve_time" => $request['reserve_time'],
         ]);
-    return redirect('reserve');
+    return redirect('reserve')->with('flash_message', '予約が完了しました');
    }
 
     }

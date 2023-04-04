@@ -22,6 +22,11 @@
                         <div class='signin-box'>
                             <table>
                                 <h1>受講予約</h1>
+                                @if (session('flash_message'))
+                                    <div class="flash_message">
+                                        {{ session('flash_message') }}
+                                    </div>
+                                @endif
                                 <form action="{{route('lesson_reserve')}}" method="post">
                                     @csrf
                                     <tr>
@@ -70,11 +75,13 @@
                                 </form>
                             </table>
                             <div>
-                                <!-- 戻るボタン用 -->
-                                <form  class="reserve-back" >
+                                <!-- ログアウト -->
+                                <form action="{{route('logout')}}" method="post" class="logout">
                                     @csrf
-                                    <input class="login-btn" type="button" onclick="history.back()" value="戻　る">
-            
+                                    <button class="login-btn">ログアウト
+        
+                                    </button>
+        
                                 </form>
             
                             </div>

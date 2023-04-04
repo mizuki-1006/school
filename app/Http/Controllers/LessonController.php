@@ -25,7 +25,7 @@ class LessonController extends Controller
             "price" => $request->price,
             "content" => $request->content,
         ]);
-        return redirect()->route('show_admin');
+        return redirect()->route('show_admin')->with('flash_message', 'レッスンの追加が完了しました');
     }
 
 

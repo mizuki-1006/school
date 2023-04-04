@@ -14,6 +14,11 @@
             <section>
                 <div class="signin-box">
                     <h1>ログイン画面</h1>
+                    @if (session('flash_message'))
+                        <div class="flash_message">
+                            {{ session('flash_message') }}
+                        </div>
+                    @endif
                     <form action="{{ route('signin') }}" method="post">
                         @csrf
                         <h2>下記の項目を全てご記入の上<br>ログインボタンを押してください。</h2>
