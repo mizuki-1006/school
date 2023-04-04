@@ -21,8 +21,6 @@ class ReserveController extends Controller
         $countLessonLimit = Reserve::where('reserve_date',$request->reserve_date)->count();
         // print_r($countLessonLimit);
         // dd($countLessonLimit);
-        $doubleBooking = Reserve::where('reserve_date',$request->reserve_date)->first();
-        // dd($doubleBooking );
 
         $dayOfWeek = date('w', strtotime($request->reserve_date));
         // dd($dayOfWeek);
@@ -30,11 +28,6 @@ class ReserveController extends Controller
         if($countLessonLimit == 40){
             return back()->withErrors([
                 'reserve_error' => '指定した予約日は満席です。別日の予約をお願いいたします。'
-            ]);
-
-        }elseif(!empty($doubleBooking)){
-            return back()->withErrors([
-                'reserve_error' => '指定した予約日は既に予約されています。別日の予約をお願いいたします。'
             ]);
         }elseif($dayOfWeek == 0 || $dayOfWeek == 6){
             return back()->withErrors([
