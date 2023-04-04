@@ -36,7 +36,7 @@
 
                             </dt>
                             <dd>
-                                <input type="text" name="password" id="password"placeholder="パスワード">
+                                <input type="password" name="password" id="password"placeholder="パスワード">
                             </dd>
                             <dd>
                                 {{-- <input type="submit" value="パスワードを変更する" onclick="return confirm('この内容で変更してもよろしいですか？'"> --}}

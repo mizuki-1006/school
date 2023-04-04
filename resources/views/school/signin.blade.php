@@ -39,7 +39,7 @@
 
                             </dt>
                             <dd>
-                                <input type="text" name="password" id="password" placeholder="パスワード">
+                                <input type="password" name="password" id="password" placeholder="パスワード">
                             </dd>
                             <dd>
                                 <input class="login-btn" type="submit" value="ログイン">

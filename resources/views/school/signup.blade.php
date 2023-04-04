@@ -165,7 +165,7 @@
 
                             </dt>
                             <dd>
-                                <input type="text" name="password" id="password" placeholder="パスワード">
+                                <input type="password" name="password" id="password" placeholder="パスワード">
                             </dd>
                             <dd>
                                 <input class="login-btn" type="submit" onclick="return confirm('この内容で会員登録をしてよろしいですか？')" value="会員登録">
