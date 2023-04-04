@@ -1,0 +1,493 @@
+@charset "UTF-8";
+/* reset */
+body, h1, h2, h3, h5, h6, p, address,
+ul, ol, li, dl, dt, dd, img, form, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 100%;
+	text-align: left;
+	list-style-type: none;
+	border-collapse: collapse;
+}
+
+textarea { font-size: 100%; vertical-align:middle;}
+img { border-style: none; display: block; }
+hr { display: none; }
+em{font-style: normal}
+input{line-height:auto;vertical-align:middle;}
+strong.more{color:#c30}
+a{text-decoration: none;
+    color:inherit;}
+
+
+body {
+	font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+/* ヘッダー */
+.header-nav{
+    background-color:antiquewhite;
+    height:110px;
+    width: 100%;
+    color:brown;
+	display:flex;
+    justify-content: space-between;
+    padding:0 5%;
+    padding-top:30px;
+	border-bottom:2px solid brown;
+}
+
+.header-logo{
+	font-family: 'DotumChe', serif;
+	font-size: 35px;
+}
+
+
+.header-menu{
+	display: flex;
+}
+
+.menu{
+	padding:20px 10px 0 10px;
+}
+
+
+/* フッター */
+.footer-inr{
+    background-color:antiquewhite;
+    height: 200px;
+    width: 100%;
+    color:brown;
+	display:flex;
+    justify-content: space-between;
+	text-align: center;
+    padding:4% 5%;
+	border-top:2px solid brown;
+}
+
+.reserve{
+	text-align: center;
+	padding-top: 20px;
+}
+
+.reserve h3{
+	font-size: larger;
+	margin: 10px;
+	border-bottom:1px solid brown;
+}
+
+.reserve a{
+	font-size: larger;
+	background-color: darkred;
+	color: azure;
+	padding: 10px;
+}
+
+.contact{
+	display:flex;
+}
+
+.access{
+	padding-left: 20px;
+}
+
+/* メインホームページ */
+.opacty{
+    min-height: 500px;
+    width: 100%;
+    background-color:rgba(255,255,255,0.2);
+
+}
+
+.school{
+	min-height: 500px;
+	padding-top: 15%;
+}
+
+
+.concept{
+	text-align: center;
+	font-size: 25px;
+	color: #000;
+	text-shadow:1.5px 1.5px 0 #FFF, -1.5px -1.5px 0 #FFF,
+				-1.5px 1.5px 0 #FFF, 1.5px -1.5px 0 #FFF,
+				0px 1.5px 0 #FFF,  0 -1.5px 0 #FFF,
+				-1.5px 0 0 #FFF, 1.5px 0 0 #FFF;
+}
+
+.teachers{
+	padding:60px;
+}
+
+.teachers h3{
+	font-size: 20px;
+	text-align: center;
+	padding:10px;
+}
+
+.teacher{
+	display: flex;
+	justify-content:center;
+	color: #000;
+	text-shadow:1.5px 1.5px 0 #FFF, -1.5px -1.5px 0 #FFF,
+				-1.5px 1.5px 0 #FFF, 1.5px -1.5px 0 #FFF,
+				0px 1.5px 0 #FFF,  0 -1.5px 0 #FFF,
+				-1.5px 0 0 #FFF, 1.5px 0 0 #FFF;
+}
+
+.teacher-1{
+	padding:0 15px;
+}
+
+.teacher-2{
+	padding:0 15px;
+}
+
+
+.teacher p{
+	text-align: center;
+
+}
+
+/* レッスン一覧 */
+
+.lesson-logo h1{
+	font-size: 50px;
+	font-family: 'DotumChe', serif;
+	text-align: center;
+	margin-bottom: 30px;
+}
+.lesson-list{
+    background-color:burlywood;
+    color: white;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.lesson-text{
+    margin:0;
+    font-weight: bold;
+}
+
+.lessons{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.lesson{
+	margin-bottom: 30px;
+}
+
+.lesson-photo img{
+    object-fit: cover;
+    height: 80%;
+    width:80%;
+    border-radius: 15px;
+    margin:auto;
+}
+
+.lesson p{
+	text-align:center;
+	padding:5px 0;
+}
+
+.lesson-text{
+    font-size: 20px;
+    font-weight: bold;
+	text-align:center;
+	padding:20px 0;
+}
+
+/* ログイン画面 */
+.signin-box{
+    width:70%;
+    margin:5% auto;
+}
+
+.signin-box form{
+    margin: 3%;
+}
+
+.signin-box span{
+	background-color: chocolate;
+	color: azure;
+	padding: 5px;
+    border-radius: 5px;
+}
+
+.signin-box li{
+	color:red;
+	text-align: center;
+	font-size: smaller;
+}
+
+.signin-box h1{
+	text-align: center;
+	color:brown;
+	font-weight: bolder;
+	font-size: 30px;
+	padding:20px 0;
+    border-bottom: 3px dotted brown;
+}
+.signin-box h2{
+	text-align: center;
+	font-size:20px;
+	margin:40px 0;
+}
+
+.signin-box dt{
+	text-align: center;
+
+}
+
+.signin-box dd{
+	text-align: center;
+	padding:10px 0 20px 0;
+}
+
+
+.signin-box input{
+	text-align: center;
+}
+
+.other{
+	text-align: center;
+	padding:40px;
+}
+
+.login-btn{
+	margin: 10px auto;
+	padding: 0.5rem 2rem;
+	font-weight: bold;
+	background: antiquewhite;
+	border:2px solid brown;
+	color:brown;
+	border-radius: 100vh;
+}
+
+.signup{
+	margin: 10px auto;
+	padding: 0.5rem 2rem;
+	font-weight: bold;
+	background: antiquewhite;
+	border:1px solid chocolate;
+	color:chocolate;
+	border-radius: 100vh;
+
+}
+
+
+
+/* カレンダー用 */
+
+.calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+.calendar-table th{
+    border: 1px solid #ebeced;
+    padding: 10px;
+
+}
+.calendar-table td{
+
+    border: 1px solid #ebeced;
+    padding: 10px;
+}
+
+.calendar-table{
+    background-color: lightyellow;
+    font-size: 12px;
+    text-align: left;
+
+}
+ .header-calendar {
+    background-color: burlywood;
+    color: #fff;
+    font-size: 12px;
+    text-align: left;
+}
+
+.month {
+    text-align: center;
+    width: 100%;
+}
+
+.month a {
+    color: #4a80d6;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.day {
+    height: 100px;
+}
+
+.calendar-title{
+	text-align: center;
+	font-size: 30px;
+	margin:20px 0;
+	color:brown;
+}
+
+/* マイページ用 */
+.user_name p{
+	text-align: center;
+	margin:20px;
+}
+
+.reserve-list p{
+	text-align: center;
+	padding:10px;
+
+}
+
+.mypage{
+	display: flex;
+	justify-content:center;
+	margin-bottom: 15px;
+}
+
+.select-lesson-box{
+	width: 80%;
+	border: 2px solid brown;
+	border-radius: 15px;
+	margin: 30px auto;
+}
+
+.user-reserve tr{
+	text-align: center;
+}
+
+.reserve-back{
+	text-align: center;
+}
+
+
+/* 管理者用ページ */
+
+.reserve-list{
+	min-height: 300px;
+	margin:20px;
+	border: 2px solid brown;
+	border-radius: 15px;
+}
+
+.reserve-list h3{
+	text-align: center;
+	margin:30px;
+	font-size:30px;
+	border-bottom: 1px solid brown;
+}
+
+.reserve-make{
+	text-align: center;
+    width:70%;
+    margin:10px auto;
+
+}
+
+.reserve-logout{
+	text-align: center;
+	padding-top: 20px;
+	margin: 20px;
+}
+
+.logout{
+	text-align: center;
+	margin:20px;
+}
+.show_reserve{
+	text-align: center;
+	margin:20px;
+
+}
+
+.delete-box{
+	border: 2px solid brown;
+	border-radius: 15px;
+	margin: 20px;
+	padding: 20px;
+}
+
+.delete-box h2{
+	text-align: center;
+	font-size: x-large;
+	padding-bottom: 15px;
+}
+
+.delete-box dt{
+	text-align: center;
+	padding:10px;
+}
+
+.delete-box dd{
+	text-align: center;
+	padding:10px;
+}
+
+.lesson-add{
+	text-align: center;
+	margin:30px;
+	font-size:30px;
+	border-bottom: 1px solid brown;
+}
+
+.admin{
+	display: flex;
+	width: 70%;
+	margin:0 auto;
+	justify-content: space-around;
+	padding-bottom: 20px;
+}
+
+.admin-home{
+    width:70%;
+	text-align: center;
+	margin: 30px auto;
+}
+
+.admin-home a{
+    width:70%;
+	text-align: center;
+	padding: 0.5rem 2rem;
+	font-weight: bold;
+	background: antiquewhite;
+	border:2px solid brown;
+	color:brown;
+	border-radius: 100vh;
+}
+
+.admin-home-2{
+	text-align: center;
+	padding: 40px;
+}
+
+
+/* 画面縮小時 */
+@media(max-width:896px){
+	/*ヘッダー*/
+
+
+
+
+}
