@@ -8,7 +8,6 @@
         <link rel="stylesheet"  href="base.css">
         <script src="https://code.jquery.com/jquery-3.6.0.js" ></script>
     </head>
-    <?php echo $today ?>
     <main>
         @include('school.header')
         <body>
