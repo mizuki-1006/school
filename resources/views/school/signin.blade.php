@@ -32,7 +32,7 @@
                                 <input type="text"  name="email" id="email" placeholder="aaaaaa@outloook.jp" value="{{ old('email')}}">
                             </dd>
                             <dt>
-                                <label type="password" for="password">パスワード</label>
+                                <label for="password">パスワード</label>
                                 @error('password')
                                 <li>{{$message}}</li>
                                 @enderror
