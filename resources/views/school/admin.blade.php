@@ -28,6 +28,9 @@
                         <dl>
                             <dt>
                                 <label for="lesson_name">レッスン名</label>
+                                @error('lesson_name')
+                                <li>{{$message}}</li>
+                                @enderror
                             </dt>
                             <dd>
                                 <input type="text" name="lesson_name" id="lesson_name">
@@ -35,6 +38,9 @@
                             <dt>
 
                                 <label for="content">レッスン内容</label>
+                                @error('content')
+                                <li>{{$message}}</li>
+                                @enderror
                             </dt>
                             <dd>
                                 <textarea name="content" id="content" rows="13" cols="40"></textarea>
@@ -42,6 +48,9 @@
                             <dt>
 
                                 <label for="price">料金</label>
+                                @error('price')
+                                <li>{{$message}}</li>
+                                @enderror
                             </dt>
                             <dd>
                                 <input type="text" name="price" id="price">

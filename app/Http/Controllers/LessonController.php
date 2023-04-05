@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Lesson;
 use App\Models\Reserve;
+use App\Http\Requests\LessonRequest;
 
 class LessonController extends Controller
 {
@@ -18,7 +19,7 @@ class LessonController extends Controller
     }
 
     //レッスン追加アクション　OK
-    public function add_lesson(Request $request){
+    public function add_lesson(LessonRequest $request){
         // dd($request->all());
         Lesson::create([
             "lesson_name" => $request->lesson_name,
